@@ -1,0 +1,258 @@
+/*Fuente de Google:Agbalumo*/
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+body{
+    background: rgb(101, 101, 99);
+    width: 1300px;
+    margin: 0px auto;
+}
+
+nav {
+    background: rgb(76, 175, 80);
+    margin: 0px;
+}
+
+nav ul {
+    padding: 0px; /*le pongo 0 para quitarle el padding que sale por defecto*/
+    text-align: center;
+}
+
+/*
+Una caja nav ocupa 150px, tenemos 4 = 600px del total de 1300px disponibles
+Se podrian colocar un total de 8 bloques  1200px, el 9 se saldria.  
+*/
+nav ul li{
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255); /* Texto blanco para mejor contraste */
+    padding: 20px 0px; 
+    font-weight: 500px;
+}
+
+nav ul li a:hover {
+    background-color: rgb(56, 142, 60); /* Verde más oscuro al pasar el ratón */
+    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);
+}
+
+#titulo{
+    height: 150px;
+    background-image: url("imgSostenibilidad.png");
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 50px 0px;
+    font-size: 50px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,0.3);
+    margin: 0px
+}
+
+/*Del ancho total 1300px, usamos 520px para el aside lateral*/
+/*520px incluye padding de 10px a cada lado (box-sizing: border-box)*/
+#lateral{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(255, 248, 225); 
+    float: left;
+    padding: 10px;
+    border-right: 2px solid rgb(200, 200, 190);
+    position: relative;
+}
+
+/*El form ocupa el resto: 1300px - 520px = 780px*/
+/*780px incluye padding de 15px a cada lado (box-sizing: border-box)*/
+#form{
+    width: 750px;
+    height: 500px;
+    padding: 15px;
+    background-color: rgb(232, 245, 233); 
+    float: left;
+    text-align: center;
+}
+
+/*Espacio usable en aside: 520px - (padding 20px) = 500px*/
+/*Imagen centrada de 300px*/
+#imgaside{
+    width: 300px;
+    height: 200px;
+    border: 3px solid rgb(76, 175, 80); 
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/*Espacio usable en form: 780px - (padding 30px) = 750px*/
+/*Caja del formulario centrada de 500px*/
+#cajaFormulario{
+    width: 466px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0px auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
+    border: 2px solid rgb(200, 230, 201); 
+}
+main{
+    overflow: hidden;
+}
+
+label{
+    display: block;
+    margin: 10px 0px;
+    text-align: center;
+    font-family: "Agbalumo";
+    color: rgb(51, 51, 51);
+}
+
+input, select{
+    display: block;
+    margin: 0px auto;
+    border: 2px solid rgb(200, 230, 201); 
+    border-radius: 5px;
+    padding: 8px;
+}
+
+input{
+    padding-left: 15px;
+    color: blue; /* Aul para texto de input*/
+    width: 300px;
+}
+
+select{
+    width: 320px;
+    padding: 8px;
+}
+
+/*Botón casi ancho completo del formulario: 470px del total de 500px disponibles*/
+button[type="submit"]{
+    width: 470px;
+    height: 40px;
+    background-color: rgb(76, 175, 80); 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+/*
+    El boton de enviar solo puede modicicar su tamaño si es un boton.
+    Si el boton fuera un input tipo submit no cambiaria nada, solo si le aplicas un id
+*/
+button[type="submit"]:hover{
+    background-color: rgb(56, 142, 60);
+    box-shadow: 0px 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+/*
+*/
+#quieresSaber{
+    position: absolute;
+    bottom: 10px;
+    left: 200px;
+}
+
+/*
+    Clase comentario para avisos
+*/
+.aviso{
+    color: red;
+}
+
+footer{
+    position: sticky;
+    height: 40px;
+    text-align: center;
+    background-color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    bottom: 0px;
+}
+footer p{
+    color:white;
+}
+
+/*
+Ancho total disponible: 1300px
+nav li: 150px × 4 = 600px usados en navegación
+*/
+
+/* 
+Cálculos del lateral:
+Ancho total deseado: 520px
+Alto 510 por los 5 pading de diferencia con el form
+- Padding izquierdo: 10px
+- Padding derecho: 10px
+- Borde derecho: 2px
+Ancho real a aplicar: 498px (520px - 20px - 2px = 498px)
+*/
+#lateral{
+    width: 498px;
+    height: 510px;
+    background-color: rgb(255, 248, 225); 
+    float: left;
+    padding: 10px;
+    border-right: 2px solid rgb(200, 200, 190);
+    position: relative;
+}
+
+/* 
+Cálculos del form:
+Ancho total deseado: 780px
+- Padding izquierdo: 15px
+- Padding derecho: 15px
+Ancho real a aplicar: 750px (780px - 30px = 750px)
+
+Comprobación total horizontal:
+498px (lateral) + 20px (paddings lateral) + 2px (borde) + 750px (form) + 30px (paddings form) = 1300px
+*/
+#form{
+    width: 750px;
+    height: 500px;
+    padding: 15px;
+    background-color: rgb(232, 245, 233); 
+    float: left;
+    text-align: center;
+}
+
+/* 
+Cálculos del cajaFormulario:
+Ancho deseado: 500px
+- Padding izquierdo y derecho: 15px × 2 = 30px
+- Bordes: 2px × 2 = 4px
+Ancho real necesario: 466px (500px - 30px - 4px = 466px)
+*/
+#cajaFormulario{
+    width: 466px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0px auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
+    border: 2px solid rgb(200, 230, 201); 
+}
+/* 
+Cálculos del botón submit:
+Ancho parent (cajaFormulario): 466px
+- Padding del parent: 30px
+- Bordes del parent: 4px
+Espacio disponible: 432px
+Ancho botón: 470px > 432px (¡Atención! El botón es más ancho que su contenedor)
+*/
+button[type="submit"]{
+    width: 470px;
+    height: 40px;
+    background-color: rgb(76, 175, 80); 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+}
