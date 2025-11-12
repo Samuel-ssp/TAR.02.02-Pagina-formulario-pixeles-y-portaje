@@ -1,0 +1,226 @@
+/*
+Fuente de Google:Agbalumo
+915,45 alto de la pantalla
+*/
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+body{
+    background: rgb(101, 101, 99);
+    width: 1300px;
+    height: 100vh;/*  708  */
+    margin: 0px auto;
+}
+
+/*----------------------------------------------
+NAVEGACIÓN
+----------------------------------------------*/
+nav {
+    background: rgb(76, 175, 80);
+    margin: 0px;
+}
+
+nav ul {
+    padding: 0px; /* le pongo 0 para quitarle el padding que sale por defecto */
+    text-align: center;
+}
+
+/*
+Una caja nav ocupa 150px, tenemos 4 = 600px del total de 1300px disponibles.
+Se podrían colocar un total de 8 bloques 1200px, el 9 se saldría.
+    
+*/
+nav ul li{
+    display: inline-block;
+    width: 11.5384615385%; /* (150*100)/1300 */
+    text-align: center;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 1.53846153846% 0%; /* (20*100)/1300 */
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    background-color: rgb(56, 142, 60);
+    box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.6);
+}
+
+/*----------------------------------------------
+TÍTULO
+----------------------------------------------*/
+
+/* 
+    
+*/
+#titulo{
+    height: 21.186440677966101694915254237288vh;
+    background-image: url("imgSostenibilidad.png");
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 3.84615384615% 0%; /* (50*100)/1300 */
+    font-size: 50px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7), 0px 1px 0px rgba(255,255,255,0.3);
+    margin: 0px;
+}
+
+/*----------------------------------------------
+MAIN: LATERAL Y FORMULARIO
+----------------------------------------------*/
+
+/*
+Caja = 39.3% del body
+Deseas padding = 2% del ancho de la caja
+→ padding real sobre el body = (0.02 × 39.3%) = 0.786%
+Para sacar el padding de la caja necesitas calcularlo a partir del porcentaje del ancho de la caja.
+
+Se aplica un margen de seguridad de -0.5% en el width total para evitar que el formulario se baje por redondeos.
+*/
+
+#lateral{
+    width: 38.3846153846%;  /* antes 38.88%, se resta ~0.5% para seguridad */
+    height: 70.2146892655367231638418079096vh;
+    background-color: rgb(255, 248, 225); 
+    float: left;
+    padding: 0.78615384615%; /* (0.02 × 39.3%) = 0.786% del body ≈ 10px reales */
+    border-right: 2px solid rgb(200, 200, 190);
+    position: relative;
+}
+
+/*
+El form ocupa el resto del ancho (1300px - 520px = 780px)
+Caja = 58.6% del body
+Deseas padding = 2% del ancho de la caja
+    padding real sobre el body = (0.02 × 58.6%) = 1.172%
+Se aplica también un -0.5% de seguridad para mantener el total ≤ 100%.
+*/
+#form{
+    width: 57.4230769231%; /* antes 57.92%, se resta ~0.5% */
+    height: 70.62146892655367231638418079096vh;
+    padding: 1.172%; /* (0.02 × 58.6%) ≈ 15px reales */
+    background-color: rgb(232, 245, 233); 
+    float: left;
+    text-align: center;
+}
+
+main{
+    overflow: hidden;
+}
+
+/*----------------------------------------------
+IMAGEN EN EL ASIDE
+----------------------------------------------*/
+/*
+Espacio usable en aside: 520px - (padding 20px) = 500px
+Imagen centrada de 300px → (300*100)/500 = 60%
+*/
+#imgaside{
+    width: 60%;
+    height: 28.248587570621468926553672316384vh;
+    border: 3px solid rgb(76, 175, 80); 
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 1.53846153846%; /* 20px/1300 */
+}
+
+/*----------------------------------------------
+FORMULARIO INTERNO
+----------------------------------------------*/
+/*
+Espacio usable en form: 780px - (padding 30px) = 750px
+Caja del formulario centrada de 500px → (500*100)/750 = 66.6667%
+*/
+#cajaFormulario{
+    width: 62.1333333333%; /* Ajuste para bordes y padding */
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 2%; /* 15px de los 750px del contenedor */
+    margin: 0px auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
+    border: 2px solid rgb(200, 230, 201); 
+}
+
+/*----------------------------------------------
+CAMPOS DEL FORMULARIO
+----------------------------------------------*/
+label{
+    display: block;
+    margin: 0.76923076923% 0%; /* (10*100)/1300 */
+    text-align: center;
+    font-family: "Agbalumo";
+    color: rgb(51, 51, 51);
+}
+
+input, select{
+    display: block;
+    margin: 0px auto;
+    border: 2px solid rgb(200, 230, 201); 
+    border-radius: 5px;
+    padding: 0.61538461538%; /* (8*100)/1300 */
+}
+
+input{
+    padding-left: 1.15384615385%; /* (15*100)/1300 */
+    color: blue;
+    width: 23.0769230769%; /* (300*100)/1300 */
+}
+
+select{
+    width: 24.6153846154%; /* (320*100)/1300 */
+    padding: 0.61538461538%; 
+}
+
+/*----------------------------------------------
+BOTÓN DE ENVÍO
+----------------------------------------------*/
+/*
+Ancho parent (cajaFormulario): 466px ≈ 62.13% del form (750px)
+Deseas botón de 470px ≈ 62.67%
+470/1300 = 36.1538%
+*/
+button[type="submit"]{
+    width: 36.1538461538%; /* (470*100)/1300 */
+    height: 5.6497175141242937853107344632768vh;
+    background-color: rgb(76, 175, 80); 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 1.15384615385%; /* (15*100)/1300 */
+}
+
+button[type="submit"]:hover{
+    background-color: rgb(56, 142, 60);
+    box-shadow: 0px 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+/*----------------------------------------------
+OTROS DETALLES
+----------------------------------------------*/
+#quieresSaber{
+    position: absolute;
+    bottom: 0.76923076923%; /* (10*100)/1300 */
+    left: 15.3846153846%; /* (200*100)/1300 */
+}
+
+.aviso{
+    color: red;
+}
+
+footer{
+    position: sticky;
+    height: 5.6497175141242937853107344632768vh;
+    text-align: center;
+    background-color: black;
+    padding-bottom: 1.53846153846%; /* (20*100)/1300 */
+    padding-top: 1.53846153846%; /* (20*100)/1300 */
+    bottom: 0px;
+}
+
+footer p{
+    color:white;
+}
